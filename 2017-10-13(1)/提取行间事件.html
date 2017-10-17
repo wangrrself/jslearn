@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>提取行间事件.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style type="text/css">
+#box {
+	width:100px;
+	height:100px;
+	background:red;
+  }
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('box');
+	
+	oDiv.onmouseover = function(){
+		toBig();
+	}
+	
+	oDiv.onmouseout = function(){
+		toSmall();	
+	}
+	
+	function toBig(){
+		var oDiv = document.getElementById('box');
+		oDiv.style.width = '200px';
+		oDiv.style.height = '200px';
+		oDiv.style.background = 'green';	
+	}
+	
+	function toSmall(){
+		var oDiv = document.getElementById('box');
+		oDiv.style.width = '100px';
+		oDiv.style.height = '100px';
+		oDiv.style.background = 'red';	
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+
+</html>

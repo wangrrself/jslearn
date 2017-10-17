@@ -1,0 +1,135 @@
+JS:
+       javascript:JS
+            脚本语言,写动画,写特效,做交互,
+            JS操作样式的
+
+js:
+      1,ECMAScript:解释器,语法;
+      2,BOM:浏览器对象模型
+      3,DOM:文档对象模型;
+
+
+<input type="button" value="按钮" onclick="alert('1')">
+      =:赋值;右边的值赋给左边;
+      ==:比较;
+      on:在......上面
+      click:点击;
+      alert():弹出
+             ()里面放的是 你要弹出的内容;
+
+
+<input type="button" value="登录" onclick="document.getElementById('box').style.display='block';"> 
+     document:文档
+      .      :的;
+     get:获取
+     Element:元素
+     By:通过
+     Id:id
+document.getElementById('box'):在整个文档里面通过id获取一个id为box的元素;
+***js里面任何样式都可以修改;
+***任何元素都可以加事件;
+***事件到底嫁给谁:操作谁就嫁给谁;
+***修改样式怎么写:   css怎么写,js就怎么写;
+
+函数:function
+***函数分为两个步骤:定义和调用,缺一不可;
+函数的定义:
+     function show(){
+         //代码;
+      }
+函数的调用:函数名加小括号
+   show();
+变量:
+    就相当于给某个元素或者某句话起一个外号;
+    变量的格式:
+        var 外号名=外号值;
+
+window.onload:
+        当页面加载完成之后再执行;
+.style操作的都是行间样式;
+
+//判断:
+if(条件){
+    条件成立执行的语句;
+}else{
+     条件不成立执行的语句;
+   }
+
+if(有白菜){
+   买白菜
+}else{
+   买萝卜  
+}
+
+换肤的做法:
+     1.改变class名称  class==>className;
+     2.改变css样式
+     3.改变link值     推荐;
+
+在JS里面class是JS的一个保留字;不能直接使用,用className
+body的简写:document.body;
+
+this:当前发生事件的元素;
+innerHTML:元素的内容;不但可以获取,还可以设置[赋值];
+
+通过事件调用的函数不加括号;
+
+length:长度,个数;
+通过标签名获取一组元素[获取到的是不止一个,多个元素];一组或者多个元素要配合下标使用;
+
+计数从0开始;
+
+下标:[number]
+    aDiv[0]:
+document.getElementByTagName(tagname);
+
+i++等同于i=i+1;
+
+事件:用户的操作;
+    onclick:点击的时候触发;
+    onmouseover:当鼠标移入的时候触发;
+    onmouseout:当鼠标移出的时候触发;
+
+总结:
+     1.获取元素的方法:
+      通过ID[获取到一个]:
+           document.getElementById(id);
+      通过tagname获取[获取到的是多个],应该配合下标使用
+           document.getElementByTagName(tagname);
+     2.body的简写:document.body;body页面中只有一个
+    
+     3.if(条件){
+         条件成立执行的语句
+      }else{
+        条件不成立执行的语句;
+     }
+    4.关于函数:
+           两个步骤:
+                 1>.定义  function show(){}
+                  2>.调用 函数名加小括号,函数名只要加括号会马上执行;
+    
+     5.事件调用函数,函数名不加括号;
+    
+     6.this:当前发生事件的元素;
+   
+     7.innerHTML:  元素内容,不但可以获取,还可以赋值;
+
+      8.a标签的href:   href="javascript:;"
+
+     9.变量:   相当于给元素起一个外号:
+              var  外号名=外号值;
+
+      10.window.onload:
+             页面加载完成之后再执行;
+
+       11.autofocus:输入框自动聚焦;
+
+       12.alert:(要弹出的内容)
+
+        13.下标:aDiv[number];
+
+        14.class===>className;
+   
+        15.length:长度   个数
+
+         16.  .style操作的是行间样式;
