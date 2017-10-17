@@ -1,0 +1,197 @@
+改变div样式5中script的位置
+body标签可以有多个?  不换行?
+关于函数的调用 刚开始刷新时弹出框?
+传参中    show();
+点和[]的区别:
+var a = 'width';
+	oBox.onclick = function(){
+		this.style[a] = '300px';	
+	}
+点击div变红1中   事件当中的循环
+关于for循环中i值的问题
+for(var i=0;i<aDiv.length;i++){
+		aDiv[i].onclick=function(){
+		alert(i);	
+		}
+		//alert(i);
+	}
+选项卡8和9中title和aa,前者可以,后者出错
+选项卡重用2中script部分
+.不能操作变量，操作变量用[];参数就相当于是变量;?
+感叹号:!!为true;!为false;
+NaN == NaN  结果为false;
+alert(isNaN(a));//检测是否为一个数字
+
+var a=NaN;/undefined;/null;
+if(a){
+	alert('true');	
+}else{
+	alert('false');
+}//结果为false;
+
+全选升级版2和3中,不熟练
+
+var a=function show(){
+	alert('1');
+}
+alert(typeof a);
+//a为function
+
+var a='12as';
+alert( typeof Number(a));
+//结果为number,去掉typeof显示结果为NaN
+
+parseInt      parseFloat
+
+var a=12;
+var b='5';
+alert(a-b);//7
+
+var a=12;
+var b='5';
+var c=3
+alert(a+c);//125;
+
+
+window.onload = function(){
+	var aInput = document.getElementsByTagName('input');
+	var count = 0;
+	aInput[0].onclick = function(){
+		if(this.checked == true){
+			for(var i = 1; i < aInput.length; i++){
+				aInput[i].checked = true;	
+			}
+			count = aInput.length - 1;
+			document.title = count;		
+		}else{
+			for(var i = 1; i < aInput.length; i++){
+				aInput[i].checked = false;	
+			}		
+			count = 0;
+			document.title = count;
+		}
+	}
+//其中document.title?
+
+eval(a);
+
+alert(eval(str)[0]);
+
+function show(){
+	alert(1);
+}
+alert(show());
+//第二个显示结果为undefined?
+
+rnd(n,m)方法
+
+/*if(a == 12){
+	alert('ok');
+}*/
+if(a == 12)alert('ok');//简写
+或者
+if(a == 12)
+	alert('ok');	
+else
+	alert('no');
+
+
+function show(a){
+	alert(1);
+	return function(b){
+		alert(2);
+		return function(c){
+			return a+b+c;
+		}
+	};
+}
+alert(show(1)(2)(3));
+//函数深入3
+
+function show(){
+	return 1;
+	}
+ var a=show();//方法有括号时为1,没有括号时为function show(){
+                                                         return 1;}
+
+
+getStyle(obj,attr){//获取行间样式
+currentStyle
+
+alert(oBox.currentStyle.height);
+alert(getComputedStyle(oBox,false).width);
+
+
+function getStyle(obj,attr){};
+
+push();//数组中添加
+
+双色球
+
+//n-m之间的随机数;包括n不包括m;
+alert(parseInt(Math.random()*(m - n)) + n);
+
+findInArr(n,arr)
+ alert(a);
+
+
+eval()函数可以把一个字符串当作一个javascript表达式一样去执行它
+用法:eval(codestring)
+ codestring是包含有javascript语句的字符串,在eval之后使用javascript引擎编译.  
+
+
+for(var i=0;i<aBtn.length;i++){
+		(function (a){
+		  aBtn[i].onclick=function(){
+			alert(a);
+		}
+		})(i);
+	}
+//关于i值的问题
+
+
+(function (){
+	alert('1');
+})();
+//最外边括号
+
+自执行函数-选项卡4
+for(var i = 0; i < aBtn.length; i++){
+		//alert(i);//0,1,2
+		(function (index){
+			aBtn[i].onclick = function(){
+				for(var i = 0; i < aBtn.length; i++){
+					aBtn[i].className = '';
+					aDiv[i].style.display = 'none';	
+				}
+				this.className = 'on';
+				aDiv[index].style.display = 'block';
+			}	
+		})(i);	//括号?????
+	}
+
+
+2.自执行函数
+		(function(){
+			alert('1');
+		})();
+
+
+
+function sum(a,b,c,d){//形式上的参数
+	//alert(arguments.length);
+	var res = 0;
+	for(var i = 0; i < arguments.length; i++){
+		res+=arguments[i];
+	}
+	return res;
+}
+
+oDate.setDate(0);
+
+with(oBox.style){};//设置样式
+oBox.style.cssText = 'width:200px;height: 200px;background: green;';	//cssText
+
+if(n==arr[i])return true;
+
+双色球??????
