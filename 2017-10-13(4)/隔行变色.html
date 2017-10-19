@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>隔行变色.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+.a{
+  background:green;
+  }
+.b{
+  background:blue;
+  }
+</style>
+<script>
+window.onload=function(){
+	 var aLi=document.getElementsByTagName('li');
+	 for(var i=0;i<aLi.length;i++){
+		 if(i%2==0){
+			 aLi[i].className='a';
+		 }else{
+			 aLi[i].className='b';
+		 }
+	 }
+}
+</script>
+  </head>
+  
+  <body>
+  <ul>
+  <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+  </body>
+</html>
