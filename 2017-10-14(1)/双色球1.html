@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>双色球1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+var arr=[];
+for(var i=0;i<6;i++){
+	var n=rnd(1,34);
+	arr.push(n);
+}
+document.write(arr);
+</script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>

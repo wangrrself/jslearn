@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>作业讲解1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+window.onload=function(){
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oS1 = document.getElementById('s1');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick=function(){
+		var a=oTxt1.value;
+		var b=oTxt2.value;
+		var c=oS1.value;
+		alert(eval(a+c+b));
+	}
+}
+</script>
+  </head>
+  
+  <body>
+  <input type="text" id="txt1">
+  <select id="s1"> 
+    <option value="+">+</option> 
+    <option value="-">-</option> 
+    <option value="*">*</option> 
+    <option value="/">/</option> 
+    <option value="%">%</option> 
+  </select>
+  <input type="text" id="txt2">
+  <input type="button" value="按钮" id="btn">
+  </body>
+</html>

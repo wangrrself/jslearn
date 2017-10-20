@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>获取样式.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	oBox.onclick=function(){
+		alert(oBox.style.width);
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div id="box" style="width:200px;height:200px;background:blue;"></div>
+  </body>
+</html>
