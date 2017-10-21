@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>模拟广告1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+#ad{
+width:100%;
+height:300px;
+background:red;
+}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('ad');
+	var timer=null;
+	timer=setTimeout(function(){
+		oDiv.style.display='none';
+	},3000);
+	
+	oDiv.onmouseover=function(){
+		clearTimeout(timer);
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div id="ad"></div>
+  </body>
+</html>

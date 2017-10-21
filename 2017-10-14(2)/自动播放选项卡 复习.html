@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>自动播放选项卡 复习.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+#box{
+	width:300px;
+	height:300px;
+	border:black 1px solid;
+	margin:50px auto;
+	font-family:"微软雅黑";
+	position:relative;
+}
+
+#box span{
+	display:block;
+	width:100px;
+	height:40px;
+	line-height:40px;
+	text-align:center;	
+	float:left;
+	background:#ccc;
+}
+
+#box span:hover{ 
+	cursor:pointer;
+}
+
+#box div{
+	wdith:300px;
+	height:260px;
+	line-height:260px;
+	text-align:center;
+	font-size:50px;
+	display:none;
+}
+
+#box .on {
+	background:#c00;
+	color:#fff;
+}
+
+#prev,#next {
+	position:absolute;
+	top:135px;
+	width:60px;
+	height:30px;
+	display:block;
+	background:green;
+	color:#fff;
+	text-align:center;
+	line-height:30px;
+	text-decoration:none;
+	font-size:30px;
+}
+
+#prev{
+	left:0;
+}
+#next{
+	right:0;
+}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var aBtn=oBox.getElementsByTagName('span');
+	var aDiv=oBox.getElementsByTagName('div');
+	var oNext=document.getElementById('next');
+	var oPrev=document.getElementById('prev');
+	var iNow=0;
+	var timer=null;
+	
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			iNow=this.index;
+			tab();
+		}
+	}
+	
+	function tab(){
+		for(var i=0;i<aBtn.length;i++){
+			aBtn[i].className='';
+			aDiv.style.display='none';
+		}
+		aBtn[iNow].className='on';
+		aDiv[iNow].style.display='block';
+	}
+	
+	oNext.onclick=next;
+	function next(){
+		iNow++;
+		if(iNow==aBtn.length){
+			iNow=0;
+		}
+		tab();
+	}
+	
+	oPrev.onclick=function(){
+		iNow--;
+		if(iNow==-1){
+			iNow=aBtn.length-1;
+		}
+		tab();
+	}
+	
+	timer=setInterval(next,1000);
+	
+	oBox.onmouseover=function(){
+		clearInterval(timer);
+	}
+	oBox.onmouseout=function(){
+		timer=setInterval(next,1000);
+	}
+}
+</script>
+  </head>
+  
+  <body>
+    <div id="box">
+	<a href="javascript:;" id="prev">←</a>
+    <span class="on">按钮1</span>
+    <span>按钮2</span>
+    <span>按钮3</span>
+	<a href="javascript:;" id="next">→</a>
+    <div style="display: block;">div1</div>
+    <div>div2</div>
+    <div>div3</div>
+</div>
+    
+  </body>
+</html>

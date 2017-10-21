@@ -1,0 +1,63 @@
+回顾:
+
+	1.eval:
+		跟字符串打交道,把字符串转换成JS可以执行的程序;
+	
+	2.获取非行间样式:
+		IE:obj.currentStyle[attr];
+		非IE:getComputedStyle(obj,false)[attr];
+		function getStyle(obj,attr){
+			if(obj.currentStyle){
+				return obj.currentStyle[attr];
+			}else{
+				return getComputedStyle(obj,false)[attr];
+			}
+		}
+	
+	3.返回值[return]:
+		谁调用就给谁;
+		return 后面的代码都不执行了;
+	
+	4.数组里面添加一项:
+		arr.push();
+		
+	5.随机数:
+		Math.random()
+		function rnd(n,m){
+			return parseInt(Math.random() * (m -n) + n);
+		}
+	
+	6.背景色的表达方式:
+		1>.英语
+		2>.#c00;
+		3>.rgb(0,0,0);
+	
+	7.undefined出现的情况:
+		1>.函数不写return,默认返回undefined,写了return没写具体的返回值;
+		2>.访问一个不存在的属性;
+		3>.定义变量没有赋值;
+
+()括号:
+    1.提升优先级的作用;
+    2.让函数执行;
+    3.传参;
+
+自执行函数:
+    格式:
+        (function(){
+             //do something
+         })();
+自执行函数好处:
+    1.解决变量名冲突的问题;
+    2.解决循环里面加事件,事件里面取不到i值的问题;
+
+定时器:
+      使用原则:先关后开;
+      关闭定时器:clearInterval(定时器名字);
+      定时器:每隔多久做一件事;
+      开启定时器:setInterval(fn,time);--->每隔多久[time]做一件事[fn];时间以毫秒为单位;一直执行,不关闭就不会停;
+
+     setTimeout(fn,time):时间以毫秒为单位,只执行一次;
+     clearTimeout(定时器名字);
+
+ID只能从document下获取;
