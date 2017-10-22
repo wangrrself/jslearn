@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>倒计时2.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+#box{
+	width:100%;
+	height:400px;
+	background:black;
+	color:#fff;
+	font-size:40px;
+	line-height:400px;
+	text-align:center;
+}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getElementById('box');
+	var oDate=new Date();
+	oDate.setFullYear(2016,10,11);
+	oDate.setHours(0,0,0,0);
+	var ms = oDate.getTime() - new Date().getTime();
+	//毫秒转换成秒
+	var oSec = parseInt(ms/1000);
+	//秒转换成天
+	var oDay = parseInt(oSec/86400);
+	//不到一天剩下的秒数;
+	oSec%=86400;
+	//小时
+	var oHour = parseInt(oSec/3600);
+	//不到一小时剩下的秒数;
+	oSec%=3600;
+	//转换成分钟
+	var oMin = parseInt(oSec/60);
+	//不到一分钟剩下的秒数;
+	oSec%=60;
+	oBox.innerHTML='距离2016年11月11日还有:'+oDay+'天'+oHour+'时'+oMin+'分'+oSec+'秒';	
+}
+</script>
+  </head>
+  <body>
+   <div id="box">距离2016年11月11日还有:xx天xx时xx分xx秒</div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>双色球1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+p{
+	width:50px;
+	height:50px;
+	background:red;
+	color:#fff;
+	text-align:center;
+	line-height:50px;
+	float:left;
+	margin-right:5px;
+	border-radius:50%;
+	font-family:"微软雅黑";
+}
+</style>
+<script>
+function addZero(n){
+	return n < 10 ? '0' + n : '' + n;
+}
+function findInArr(n,arr){
+	for(var i=0;i<arr.length;i++){
+		if(n==arr[i])return true;
+	}
+	return false;
+}
+
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n)+n);
+}
+window.onload=function(){
+	var oBtn=document.getElementById('btn');
+	var aP=document.getElementsByTagName('p');
+   function show(){
+	   var arr=[];
+    while(arr.length<6){
+	  var n=addZero(rnd(1,34));
+		 if(findInArr(n,arr)==false){
+			arr.push(n); 
+	  }
+    }
+    for(var i=0;i<aP.length;i++){
+    	aP[i].innerHTML=arr[i];
+    }
+   }
+	show();
+}
+</script>
+  </head>
+  
+  <body>
+  <input type="button" value="随机" id="btn" />
+  <p></p><p></p><p></p><p></p><p></p><p></p>
+  </body>
+</html>
