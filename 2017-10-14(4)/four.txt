@@ -1,0 +1,81 @@
+回顾:
+	1.
+		oBtn.disabled = true;
+		oBtn.disabled = fasle;
+	
+	2.str.cahrAt(i):字符串中的某一个;
+	
+	3.arguments: 实参的集合;跟实参有关,跟形参无关;有length;有下标;
+	
+	4.时间对象:
+		var oDate = new Date();系统时间;
+		oYear = oDate.getFullYear();获取年;
+		oMon = oDate.getMonth();获取月;
+		oDay = oDate.getDate();获取日期;
+		oHour = oDate.getHours();获取小时;
+		oMin = oDate.getMinutes();获取分钟;
+		oSec = oDate.getSeconds();获取秒;
+		oWeek = oDate.getDay();获取星期;
+		
+		时间戳:1970年至今的毫秒数;
+			ms = oDate.getTime();
+		
+		设置时间:
+			oDate.setFullYear(年,月,日);
+			oDate.setMonth(月);
+			oDate.setDate(日);会自动进位;
+			oDate.setHours(时,分,秒,毫秒);
+	5.设置样式:
+		with(公共的样式){ //code }
+		obj.style.cssText = 'width: 200px;height: 200px;';
+	
+	6.数学方法:
+		Math.random();随机数;
+		Math.round():四舍五入;
+		Math.ceil()向上取整;
+		Math.floor()向下取整;
+		Math.abs():取绝对值;
+		Math.max(x,y):求最大数;
+		Math.min(x,y);求最小数;
+		Math.pow(x,y):几的几次方;
+		Math.sqrt():开平方;
+
+字符串方法:
+      怎么得到一个字符串:var  str='';
+      str.length;
+      空格也算字符串的长度;
+     
+
+      str.charAt(i):取字符串中的第i个;
+
+      str.indexOf('e');查找小字符串'e'在str中的位置;从左往右数,找不到就返回-1;区分大小写;找到就返回具体的位置,不在往后找;
+     str.lastIndexOf('e'):查找小字符串'e'在str中的位置,从右往左找,返回的是从左往右的位置,区分大小写,找不到返回-1;
+
+    str.toUpperCase():字符串转大写;
+	
+	str.toLowerCase():字符串转小写;
+	
+	str.split('切割的方式');字符串切割,返回的是一个数组;字符串转数组的方法
+	
+	str.substring(开始位置,结束位置);截取字符串,包含开始位置,不包含结束为止;包头不包尾;如果不写结束位置,默认截取到最后;
+	
+abcasdsadadasdsad.txt.html.doc.exe;--->exe
+		
+window.navigator.userAgent:浏览器的详细信息;--->UA;
+
+数组方法:
+
+    arr.push():往数组的后面添加一位;
+	arr.unshift():往数组的前面添加一位;
+	arr.pop();从后面删除一位;
+	arr.shift();从前面删除一位;
+	arr.reverse():数组翻转;
+	arr1.concat(arr2,arr3):数组连接;
+	arr.sort(function(n1,n2){return n1 - n2});排序;
+	arr.join('连接的方式'):数组转字符串的方法;
+
+数组的万能操作:
+	arr.splice();
+	删除:arr.splice(开始的位置,删除的个数);
+	添加:arr.splice(开始的位置[往哪一位的前面添加],0,添加的元素1,添加的元素2···);
+	替换:arr.splice(开始的位置,删除的个数,替换的元素1,替换的元素2···);
