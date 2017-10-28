@@ -1,0 +1,69 @@
+回顾:
+	json = {name1:value1,name2:value2····};
+	
+	for(var name in json){ alert(json[name]//alert(name))}
+
+***eval json 的时候会出错,加一个()就OK了;
+
+一般配合循环使用比较多:
+   break:中断终止当前得程序;
+   continue:跳过当前得程序,后面的代码继续执行;
+
+开启js严格模式:'use strict'
+    干掉了with();
+   声明变量必须加var 
+
+  for(){},if(){}里面不能在定义函数
+
+   坏处:不兼容
+
+select:
+   oS.options:获取到所有的option
+   oS.selectedIndex:当前选中那项的索引值;
+动态添加一项option:
+     new Option('文本值','value值');
+添加:
+     oS.options.add(newOption);
+删除:
+    oS.options.remove(要删除那项的索引);
+
+JS的组成部分:兼容性问题;
+      ECMAScript:解释器,语法;
+	
+	BOM:broswer object model 浏览器对象模型;
+	
+	DOM:document object model 文档对象模型;大部分兼容;不兼容有办法解决;
+window.open('url','打开的方式'):chrome FF处于用户体验的考虑,会阻止自动打开的页面;IE自动打开;
+只要是通过用户操作打开的页面,浏览器都不会阻止;
+
+window.close():关闭窗口;chrome直接关闭;FF没反应;IE有提示;
+
+about:blank:新空白页面;
+
+**所有的方法都是属于window下面的;
+
+||:从左往右看,遇到真的就不再往后看,否则会一直往后找;如果都是假的,取最后一个值;
+空格也算文本元素;
+
+DOM 关系:
+	子元素：
+		父级.children;只获取子元素,不包含非子元素的元素;返回的是一组多个元素;
+		
+	父元素：
+		子级.parentNode;
+	
+	下一个兄弟节点：
+		obj.nextSibling:高版本浏览器会识别空格;IE8--正常;	
+		obj.nextElementSibling:高版本正常,IE8--报undefined;
+	
+	上一个兄弟节点:
+		obj.previousSibling:高版本浏览器会识别空格,IE8--正常;
+		obj.previousElementSibling:高版本正常,IE8--报undefined;
+	
+	第一个子元素:
+		父级.firstChild:高版本浏览器会识别空格;IE8--正常;
+		父级.firstElementChild:高版本正常,IE8--报undefined;
+	
+	最后一个子元素:
+		父级.lastChild:高版本浏览器会识别空格;IE8--正常;
+		父级.lastElementChild:高版本正常,IE8--报undefined;

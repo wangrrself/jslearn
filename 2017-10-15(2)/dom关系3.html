@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>dom关系3.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+window.onload=function(){
+	var oList=document.getElementById('list');
+	var oNext = oList.nextElementSibling;
+	alert(oNext.innerHTML);
+}
+</script>
+  </head>
+  
+  <body>
+   <ul id="box">
+    <li>111</li>
+	<li id="list">222</li>
+    <li>333</li>
+    <li>444</li>
+   
+</ul>
+  </body>
+</html>

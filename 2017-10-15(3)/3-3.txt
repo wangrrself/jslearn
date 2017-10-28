@@ -1,0 +1,38 @@
+创建元素:
+   document.createElement('tagname');
+添加:
+   往后面添加一条:
+         父级.appendChild(要添加的元素);
+
+   往前面添加一条:有类似剪切的功能;
+         父级.insertBefore(要添加的元素,在谁的前面);
+
+删除元素:
+     父级.removeChild(要删除的元素);
+
+window.onscroll:滚动滚动条的时候触发;
+window.onresize:缩放浏览器窗口的时候触发;
+
+可视区宽:document.documentElement.clientWidth;
+可视区高:document.documentElement.clientHeight;
+  
+
+			getStyle			offsetWidth/Height
+单位：			带单位				不带单位;
+数据类型		string				number
+宽/高			本身宽高			盒子模型的宽高
+对于隐藏		可以获取			获取不到[0]; 
+
+
+滚动距离:横向和纵向;
+	纵向：
+		document.body.scrollTop;兼容chrome;
+		document.documentElement.scrollTop;火狐和IE
+		var scrollT = document.documentElement.scrollTop || document.body.scrollTop	
+	
+	横向：
+		document.body.scrollLeft:兼容chrome;
+		document.documentElement.scrollLeft:火狐和IE
+	var scrollT = document.documentElement.scrollLeft || document.body.scrollLeft;
+		
+事件可以连等;      

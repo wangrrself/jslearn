@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+
+#menu {
+	width: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	border: #000 1px solid;
+}
+
+#menu li {
+	width: 100px;
+	height: 40px;
+	line-height:40px;
+	border-bottom: #666 1px solid;
+}
+
+#menu li a  {
+	display: block;
+	text-align:center;
+	text-decoration: none;
+	color: #333;
+}
+</style>
+<script>
+window.onload = function(){
+	var oMenu = document.getElementById('menu');
+	
+	document.oncontextmenu = function(ev){
+		var oEvent = ev || event;
+		var l = oEvent.clientX;
+		var t = oEvent.clientY;
+		oMenu.style.display = 'block';
+		oMenu.style.left = l + 'px';
+		oMenu.style.top = t + 'px';
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<ul id="menu">
+	<li><a href="http://www.baidu.com">去百度</a></li>
+    <li><a href="http://www.jd.com">去京东</a></li>
+    <li><a href="http://www.taobao.com">去淘宝</a></li>
+    <li><a href="http://www.sina.com.cn">去新浪</a></li>
+</ul>
+</body>
+</html>

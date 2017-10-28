@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>查找出现次数最多的字母.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+var str='adadsadsaadassadsaaddfdf';
+var json={};
+for(var i=0;i<str.length;i++){
+	if(json[str[i]]){
+		json[str[i]]++;
+	}else{
+		json[str[i]]=1;
+	}
+}
+console.log(json);
+
+var n = 0;
+var s = '';
+//{a: 9, d: 7, s: 6, f: 2}
+for(var name in json){
+	//alert(json[name]);
+	//9,7,6,2
+	if(n < json[name]){
+		n = json[name];	
+		s = name;
+	}
+}
+alert('出现次数最多的字母是:' + s + '出现了:' + n + '次');
+
+</script>
+  </head>
+  
+  <body>
+  </body>
+</html>

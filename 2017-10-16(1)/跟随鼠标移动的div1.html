@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>跟随鼠标移动的div1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+#box{
+width:100px;
+height:100px;
+background:red;
+position:absolute;
+left:0;
+top:0;}
+</style>
+<script>
+window.onload=function(){
+	var oBox=document.getE;ementById('box');
+	document.onmousemove=function(ev){
+		var oEvent=ev||event;
+		var l=oEvent.clientX-oBox.offsetWidth/2;
+		var t=oEvent.clientY-oBox.offsetHeight/2;
+		oBox.style.left=l+'px';
+		oBox.style.top=t+'px';
+	}
+}
+</script>
+  </head>
+  
+  <body>
+  <div id="box"></div>
+  </body>
+</html>

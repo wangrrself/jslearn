@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>点击页面弹出1-1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script>
+window.onload=function(){
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function(){
+		alert('1');
+	}
+	document.onclick=function(){
+		alert('2');
+	}
+}
+</script>
+  </head>
+  
+  <body>
+  <input type="button" value="按钮" id="btn">
+  </body>
+</html>

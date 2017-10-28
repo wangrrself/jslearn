@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#box {
+	margin: 0 auto;
+	width: 966px;
+	overflow: hidden;
+}
+
+#box ul {
+	width: 300px;
+	height: auto;
+	float:left;
+	margin-right: 20px;
+	border: #000 1px solid;
+}
+
+#box ul li {
+	width: 280px;
+	border: #999 1px solid;
+	margin: 10px 9px;
+}
+</style>
+<script>
+function rnd(n,m){
+	return parseInt(Math.random() * (m - n) + n);
+}
+function createLi(){
+	var oLi = document.createElement('li');
+	oLi.style.height = rnd(50,300) + 'px';
+	oLi.style.background = 'rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';	
+	return oLi;
+}
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var aUl = oBox.children;
+	
+	function appendLi(){
+		for(var i = 0; i < 15; i++){
+		var oLi = createLi();
+		var iMinUl;
+		var arrUl = [];
+		for(var j = 0; j < aUl.length; j++){
+			arrUl[j] = aUl[j];	
+		}
+		arrUl.sort(function(n1,n2){
+			return n1.offsetHeight - n2.offsetHeight;
+		});
+			arrUl[0].appendChild(oLi);
+		}	
+	}
+	appendLi();
+	window.onscroll = function(){
+		var oScroll = document.documentElement.scrollTop || document.body.scrollTop;
+		var clientH = document.documentElement.clientHeight;
+		var oBoxh = oBox.scrollHeight;
+		if(oScroll + clientH >= oBoxh){
+			appendLi();
+		}	
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+</body>
+</html>

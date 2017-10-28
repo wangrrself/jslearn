@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+}
+#box {
+	width: 300px;
+	margin: 100px auto;
+	border: #000 1px solid;
+}
+
+#box h3 {
+	width: 300px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
+	border-bottom: #000 1px solid;
+}
+
+#box ul {
+	display: none;
+}
+
+#box ul li {
+	width: 300px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	border-bottom: #ccc 1px solid;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	var oH3 = oBox.children[0];
+	var oUl = oBox.children[1];
+	
+	var bOK = true;//这是一个自定义的开关;
+	oH3.onclick = function(){
+		if(bOK == true){
+			oUl.style.display = 'block';
+			bOK = false;	
+		}else{
+			oUl.style.display = 'none';	
+			bOK = true;
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box">
+	<h3 id="click">选择</h3>
+    <ul id="ul">
+    	<li>北京</li>
+        <li>天津</li>
+        <li>上海</li>
+        <li>河南</li>
+    </ul>
+</div>
+</body>
+</html>

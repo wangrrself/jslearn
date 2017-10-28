@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>元素本身宽3.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+#box {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	background: red;
+	display: none;
+}
+</style>
+<script>
+function getStyle(obj,attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];	
+	}else{
+		return getComputedStyle(obj,false)[attr];	
+	}
+}
+window.onload = function(){
+	var oBox = document.getElementById('box');
+		alert(oBox.offsetWidth);//0
+		//alert(oBox.offsetHeight);	
+		//alert(getStyle(oBox,'width'));//100px
+	
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>
