@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 400px;
+            height: 400px;
+            background: red;
+            margin: 50px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+
+            if(window.navigator.userAgent.toLocaleLowerCase().indexOf('firefox')!= -1){
+                oDiv.addEventListener('DOMMouseScroll',function(){
+                    alert('1');
+                },false);
+            }else{
+                oDiv.onmousewheel = function(ev){
+                    var oEvent = ev || event;
+                    alert(oEvent.wheelDelta);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 400px;
+            height: 400px;
+            background: red;
+            margin: 50px auto;
+        }
+    </style>
+    <script src="addWheel.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+            addWheel(oDiv, function (bDown) {
+                oDiv.onmousewheel = null;
+                if (bDown) {
+                    oDiv.style.height = oDiv.offsetHeight - 10 + 'px';
+                } else {
+                    oDiv.style.height = oDiv.offsetHeight + 10 + 'px';
+                }
+            });
+        }
+    </script>
+</head>
+<body style="height: 3000px;">
+<div id="div"></div>
+</body>
+</html>

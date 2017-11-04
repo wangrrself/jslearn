@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById('txt');
+
+            if(window.navigator.userAgent.indexOf('MSIE 9.0')!=-1){
+                setInterval(function(){
+                    document.title = oTxt.value.length;
+                },100);
+            }else{
+                oTxt.onpropertychange = oTxt.oninput = function(){
+                    document.title = oTxt.value.length;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+</body>
+</html>

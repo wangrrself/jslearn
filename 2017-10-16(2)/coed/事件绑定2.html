@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function addEvent(obj,sEv,fn){
+	if(obj.addEventListener){
+		return obj.addEventListener(sEv,fn,false);
+	}else{
+		return obj.attachEvent('on'+sEv,fn);	
+	}
+}
+function show1(){
+	var oBtn2 = document.getElementById('btn2');
+	
+	oBtn2.onclick = function(){
+		alert(this.value);	
+	}
+}
+function show2(){
+	var oBtn1 = document.getElementById('btn1');
+	
+	oBtn1.onclick = function(){
+		alert(this.value);	
+	}
+}
+
+addEvent(window,'load',show1);
+addEvent(window,'load',show2);
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮1" id="btn1"/>
+
+
+
+
+<input type="button" value="按钮2" id="btn2"/>
+</body>
+</html>

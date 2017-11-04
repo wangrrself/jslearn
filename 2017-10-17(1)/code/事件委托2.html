@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+        }
+        li {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var aLi = oBox.children;
+
+            oBox.onclick = function(ev){
+                var oEvent = ev || event;
+                var oTarget = oEvent.target;
+                alert(oTarget);
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="box">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

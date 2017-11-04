@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById('txt');
+            var timer = null;
+            if(window.navigator.userAgent.indexOf('MSIE 9.0')!=-1){
+                oTxt.onfocus = function(){
+                    timer = setInterval(function(){
+                        document.title = oTxt.value.length;
+                    },100);
+                }
+                oTxt.onblur = function(){
+                    clearInterval(timer);
+                }
+            }else{
+                oTxt.onpropertychange = oTxt.oninput = function(){
+                    document.title = oTxt.value.length;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+</body>
+</html>

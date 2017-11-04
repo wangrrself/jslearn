@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        function domReady(fn){
+            if(document.addEventListener){
+                document.addEventListener('DOMContentLoaded',function(){
+                    fn && fn();
+                },false);
+            }else{
+                document.attachEvent('onreadystatechange',function(){
+                    if(document.readyState == 'complete'){
+                        fn && fn();
+                    }
+                });
+            }
+        }
+
+        domReady(function(){
+            var oDiv = document.getElementById('div');
+            oDiv.onclick = function(){
+                alert('1');
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

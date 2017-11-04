@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+
+        #h3 {
+            width: 300px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div');
+            var oH3 = document.getElementById('h3');
+
+            oDiv.onmouseout = function(){
+                alert('移出了');
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div">
+    <h3 id="h3"></h3>
+</div>
+</body>
+</html>

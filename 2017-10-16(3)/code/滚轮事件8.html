@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 400px;
+            height: 400px;
+            background: red;
+            margin: 50px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+            function wheel(ev){
+                var oEvent = ev || event;
+                var bDown = true;
+                if(oEvent.wheelDelta){
+                    if(oEvent.wheelDelta > 0){
+                        bDown = true;
+                    }else{
+                        bDown = false;
+                    }
+                }else{
+                    if(oEvent.detail >0){
+                        bDown = false;
+                    }else{
+                        bDown = true;
+                    }
+                }
+                if(bDown){
+                    oDiv.style.height = oDiv.offsetHeight - 10 + 'px';
+                }else{
+                    oDiv.style.height = oDiv.offsetHeight + 10 + 'px';
+                }
+            }
+            
+            if(window.navigator.userAgent.toLocaleLowerCase().indexOf('firefox')!= -1){
+                oDiv.addEventListener('DOMMouseScroll',wheel,false);
+            }else{
+                oDiv.onmousewheel = wheel;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

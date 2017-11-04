@@ -1,0 +1,59 @@
+回顾：
+    滚轮事件：
+        obj.onmousewheel:兼容chrome&&IE
+        DOMMouseScroll:只能通过事件绑定的形式添加;
+
+    关于滚轮的详细信息:
+        oEvent.wheelDelta:兼容chrmoe&&IE;火狐下报undefined;
+            chrome&&IE:
+                下：-120
+                上：120
+        oEvent.detail:兼容FF;
+                下：3
+                上：-3
+
+    阻止默认事件：return false;遇到通过绑定添加的事件的时候就失效了;
+        oEvent.preventDefault();
+
+    实时统计输入的文字的个数:
+        oninput:专门用来统计输入的文字;不兼容IE8--;
+        onchange:失去焦点的时候才触发;
+        onpropertychange:IE9只有增加没有删除;
+        onkeydown:按下键盘的时候触发,文字还没有进入输入框;
+        onkeyup:抬起键盘的时候触发,文字已经进入到输入框;
+------------------------------------------------------------------------
+window.onload:
+    div,css,html,js,image···
+    image:
+
+domReady:
+    DOMContentLoaded:不兼容IE8--,只兼容chrome&&FF&&ie8++;
+
+    document.onreadystatechange:全部兼容;
+        readystate状态:
+            1.uninitialized： 默认状态；
+            2.loading：开始下载：
+            3.loaded：下载完成；
+            4.interactive：下载完成但是还不可以使用；
+            5.complete：所有数据都已经准备好可以使用;
+
+onmouseover && onmouseout的一点小问题:
+移动到那里去：
+    oEvent.toElement:不兼容FF,FF下报undefined;
+    oEvent.relatedTarget:除了IE8--都兼容,IE8--报undefined;
+
+移动到哪里去：
+    oEvent.fromElement:不兼容FF,FF下报undefined;
+
+包含:
+obj.contains(元素);
+
+事件委托：把子元素的事件加给父元素来做;
+    事件源头：
+        oEvent.target:不兼容IE8--;报undefined;
+        oEvent.srcElement:不兼容FF,报undefined;
+
+    给未来的元素添加事件:
+        用事件委托;
+------------------------------------------------------------------------
+

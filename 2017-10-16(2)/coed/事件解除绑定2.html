@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oBtn = document.getElementById('btn1');
+	function show(){
+		alert('1');	
+	}
+	
+	function show1(){
+		alert('2');	
+	}
+	function addEvent(obj,sEv,fn){
+		if(obj.addEventListener){
+			return 	obj.addEventListener(sEv,fn,false);
+		}else{
+			return obj.attachEvent('on'+sEv,fn);	
+		}	
+	}
+	addEvent(oBtn,'click',show);
+	addEvent(oBtn,'click',show1);
+	//oBtn.removeEventListener('click',show1,false);
+	//oBtn.detachEvent('onclick',show1);
+	function removeEvent(obj,sEv,fn){
+		if(obj.removeEventListener){
+			return obj.removeEventListener(sEv,fn,false);	
+		}else{
+			return obj.detachEvent('on' + sEv,fn);	
+		}
+	}
+	removeEvent(oBtn,'click',show);
+	removeEvent(oBtn,'click',show1);
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮1" id="btn1"/>
+</body>
+</html>

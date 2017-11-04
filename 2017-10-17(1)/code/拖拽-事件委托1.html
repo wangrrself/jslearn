@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return parseInt(Math.random() * (m - n) + n);
+        }
+        window.onload = function () {
+            for (var i = 0; i < 100; i++) {
+                var oDiv = document.createElement('div');
+                oDiv.style.background = 'rgb(' + rnd(0, 256) + ',' + rnd(0, 256) + ',' + rnd(0, 256) + ')';
+                oDiv.style.left = rnd(0, document.documentElement.clientWidth - 80) + 'px';
+                oDiv.style.top = rnd(0, document.documentElement.clientHeight - 80) + 'px';
+                oDiv.setAttribute('drag', 'index');
+                document.body.appendChild(oDiv);
+            }
+
+            document.onmousedown = function (ev) {
+                var oEvent = ev || event;
+                var oTarget = oEvent.target || oEvent.srcElement;
+                var disX = oEvent.clientX - oTarget.offsetLeft;
+                var disY = oEvent.clientY - oTarget.offsetTop;
+
+                if (oTarget.getAttribute('drag') == 'index') {
+                    document.onmousemove = function (ev) {
+                        var oEvent = ev || event;
+                        var l = oEvent.clientX - disX;
+                        var t = oEvent.clientY - disY;
+                        oTarget.style.left = l + 'px';
+                        oTarget.style.top = t + 'px';
+                    }
+                    document.onmouseup = function () {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    }
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>

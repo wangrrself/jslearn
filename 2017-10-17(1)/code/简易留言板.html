@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var aLi = oBox.children;
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].onclick = function () {
+                    alert(this.innerHTML);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+<input type="button" value="按钮" id="btn">
+<ul id="box">
+    <li>123213</li>
+    <li>123213</li>
+</ul>
+</body>
+</html>

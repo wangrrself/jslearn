@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function addEvent(obj,sEv,fn){
+            if(obj.addEventListener){
+               return obj.addEventListener(sEv,fn,false);
+            }else{
+               return obj.attachEvent('on' + sEv,fn);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

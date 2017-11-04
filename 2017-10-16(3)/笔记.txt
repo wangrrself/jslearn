@@ -1,0 +1,85 @@
+回顾:
+    1.
+        onmousedown:鼠标按下的时候触发;
+        onmousemove:鼠标移动的时候触发
+        onmouseup:鼠标抬起的时候触发;
+
+    2.
+        事件捕获:IE独有的,
+        设置捕获:obj.setCapture();
+        释放捕获:obj.releaseCapture();
+
+    3.
+        克隆:
+            obj.cloneNode(true/false);
+            true:深度克隆
+            false:浅克隆;
+
+    4.
+        移除属性：
+        obj.removeAttribute('id');
+
+    5.
+        事件绑定:
+            obj.addEventListener(事件名,函数,false);
+            obj.attachEvent(on+'事件名',函数);
+        function addEvent(obj,sEv,fn){
+            if(obj.addEventListener){
+                return obj.addEventListener(sEv,fn,false);
+            }else{
+                return obj.attachEvent('on' + sEv,fn);
+            }
+        }
+
+    6.事件解除绑定:
+        obj.removeEventListener(sEv,fn,fasle);
+        obj.detachEvent('on' + sEv,fn);
+        function removeEvent(obj,sEv,fn){
+            if(obj.removeEventListener){
+                return obj.removeEventListener(sEv,fn,false);
+            }else{
+                return obj.detachEvent('on' + sEv,fn);
+            }
+        }
+    7.事件下沉[事件捕获]:
+        false:不下沉;冒泡
+        true:下沉;
+-------------------------------------------------------------------------
+滚轮事件:
+    obj.onmousewheel:滚动鼠标滚轮的时候触发;兼容IE系列和chrome;
+    DOMMouseScroll:只能通过事件绑定的形式添加此事件;只兼容FF;
+
+    兼容性问题解决方案:判断浏览器;
+
+    oEvent.wheelDelta:不兼容FF；火狐下报undefined;
+        chrome&&IE：
+            下：-120；
+            上：120；
+
+    oEvent.detail:
+        FF:
+            下：3；
+            上：-3；
+
+    return false阻止浏览器默认行为,遇到绑定添加的事件的时候就失效了;
+    用oEvent.preventDefault();在使用此方法之前要做判断;
+
+onkeydown: 文字还没有进入到输入框;
+onkeyup: 文字计进入到输入框;
+onchange:当值改变的时候触发;输入框失去焦点的时候触发;
+oninput:IE8--不兼容，ie9只有增加没有删除;
+onpropertychange:兼容IE系列;IE9只有增加没有删除,
+
+
+
+
+
+
+
+
+
+
+
+
+
+

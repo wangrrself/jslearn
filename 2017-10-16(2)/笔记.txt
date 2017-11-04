@@ -1,0 +1,89 @@
+回顾:
+	1.事件对象:存储或者描述了事件更加详细的信息;
+		event	
+		oEvent.clientX
+		oEvent.clientY
+	
+	2.event:兼容chrome和IE系列,不兼容火狐;火狐下用传参的方式解决;
+		var oEvent = ev || event;
+	
+	3.onmouseomove:移动鼠标的时候触发
+		onkeydown：键盘按下的时候触发;
+		onkeyup:键盘抬起的时候触发;
+		oncontextmenu:鼠标右键的时候触发;
+		onmouseenter:-->onmouseover
+		onmouseleave:-->onmouseout
+		
+	4.get&&post
+		get:不安全,容量小[32kb],有缓存,适合做分享;
+		post:容量大[1gb],安全,没有缓存,不适合做分享;
+		
+		form提交必须的东西：
+			*action：url
+			*name:数据名；
+			*value:数据值；
+			method:get
+	
+	5.事件冒泡：子元素事件会传递到父元素身上,如果父元素身上有相同事件,会触发,否则会继续冒泡;
+		oEvent.cancelBubble = true;
+	
+	6.取消浏览器默认行为[事件] return false;
+	
+	7.键码： oEvent.keyCode
+		ctrlKey
+		altKey
+		shiftKey
+	
+	8.简写：
+		body: document.body
+		html: document;
+	
+	9.cache[缓存]:针对浏览器来说,一个相同的网址只会访问一下,
+	
+	10.URl构成： 纯地址？数据1&&数据2&&数据n···
+----------------------------------------------------------------
+拖拽：
+	onmousedown:鼠标按下
+	onmousemove:鼠标移动
+	onmouseup:鼠标抬起
+
+事件捕获：针对IE，也就是IE独有的东西;
+
+克隆：
+	obj.cloneNode(true/false);//true:深度克隆;false:浅克隆；
+
+移除属性：
+	obj.removeAttribute('要移除的属性名');
+	
+事件绑定：全新的添加事件的方法;
+	同一个元素，同一个事件，希望执行不同的函数;
+	obj.addEventListener(事件名，函数，false);-->事件名不加on;IE8--报undefined;
+	IE系列用obj.attachEvent(事件名，函数);-->事件名必须加on，chrome和火狐下报错;
+	
+事件解除绑定：***不能解除匿名函数的绑定;因为两个匿名函数不相等;
+	obj.removeEventListener('事件名',fn,false);不兼容IE8--；IE8以下报undefined;
+	
+	obj.detachEvent(on+'事件名'，fn):不兼容IE8++,IE8++和高版本浏览器报错;
+	
+事件下沉:
+	obj.addEventListener(事件名，函数，false):
+	第三个参数的意思是：事件是否下沉;
+	false:不下沉,不下沉就冒泡;
+	true:下沉;
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

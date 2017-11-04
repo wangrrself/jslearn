@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 200px;
+	height:200px;
+	background: red;
+	color: #fff;
+	margin-bottom: 20px;
+}
+</style>
+<script>
+window.onload = function(){
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	oBtn.onclick = function(){
+		var newDiv = oBox.cloneNode(true);
+		document.body.appendChild(newDiv);
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" id="btn"/>
+<div id="box">
+	<h3>我是一个H3</h3>
+</div>
+</body>
+</html>

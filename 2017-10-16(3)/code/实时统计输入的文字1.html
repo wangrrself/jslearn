@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById('txt');
+
+            oTxt.onkeyup = function(){
+                document.title = oTxt.value.length;
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="" id="txt">
+</body>
+</html>
