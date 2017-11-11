@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+
+            oDiv.onclick = function(){
+                move(this,{width:1000},2000,'ease-out');
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

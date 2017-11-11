@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #wrap {
+            width: 590px;
+            height: 340px;
+            position: relative;
+            margin: 100px auto;
+            border: #000 1px solid;
+            overflow: hidden;
+        }
+
+        #box {
+            height: 340px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #box li {
+            width: 590px;
+            height: 340px;
+            float: left;
+        }
+
+        #btn {
+            position: absolute;
+            width: 580px;
+            left: 50%;
+            bottom: 0;
+            margin-left: -290px;
+            height: 20px;
+        }
+
+        #btn li {
+            width: 100px;
+            height: 10px;
+            background: #c00;
+            float: left;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        #btn li span {
+            width: 0;
+            height: 10px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ececec;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var oWrap = document.getElementById('wrap');
+            var oBox = document.getElementById('box');
+            var aLi = oBox.children;
+            var oBtn = document.getElementById('btn');
+            var aBtn = oBtn.children;
+            var aSpan = oBtn.getElementsByTagName('span');
+
+            oBox.style.width = aLi.length * aLi[0].offsetWidth + 'px';
+            var iNow = 0;
+            move(aSpan[iNow],{width: 100},{fn:function(){
+                iNow++;
+                move(oBox,{left:-aLi[0].offsetWidth * iNow});
+            }});
+        }
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <ul id="box">
+        <li><img src="cat/s1.jpg" alt=""></li>
+        <li><img src="cat/s2.jpg" alt=""></li>
+        <li><img src="cat/s3.jpg" alt=""></li>
+        <li><img src="cat/s4.jpg" alt=""></li>
+        <li><img src="cat/s5.jpg" alt=""></li>
+    </ul>
+    <ol id="btn">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ol>
+</div>
+
+</body>
+</html>

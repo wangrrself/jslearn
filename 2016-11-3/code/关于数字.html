@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [];
+//    var n = 0;
+//    var count = 10;
+    for(var i = 0; i < 10; i++){
+        var a = 1 - i/10;
+        var c = 1 - a*a*a;
+        arr.push(c.toFixed(2));
+    }
+    document.write(arr.join('<br/>'));
+</script>
+</body>
+</html>

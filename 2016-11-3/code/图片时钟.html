@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+
+        }
+
+        ul li {
+            width:24px;
+            height: 35px;
+            overflow: hidden;
+            float: left;
+            font-size: 30px;
+            position: relative;
+        }
+
+        ul li img{
+            position: absolute;
+        }
+    </style>
+    <script>
+        function toDou(n){
+            if(n < 10){
+                return '0' +n;
+            }else{
+                return '' +n;
+            }
+        }
+        window.onload = function () {
+            var aImg = document.getElementsByTagName('img');
+
+            var oDate = new Date();
+            var oH = oDate.getHours();
+            var oMin = oDate.getMinutes();
+            var oSec = oDate.getSeconds();
+            var str = toDou(oH) + toDou(oMin) + toDou(oSec);
+            for(var i = 0; i < aImg.length; i++){
+                aImg[i].style.top = -str.charAt(i) * 35 + 'px';
+            }
+
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li><img src="img/num.png" alt=""/></li>
+    <li><img src="img/num.png" alt=""/></li>
+    <li>:</li>
+    <li><img src="img/num.png" alt=""/></li>
+    <li><img src="img/num.png" alt=""/></li>
+    <li>:</li>
+    <li><img src="img/num.png" alt=""/></li>
+    <li><img src="img/num.png" alt=""/></li>
+
+</ul>
+
+</body>
+</html>

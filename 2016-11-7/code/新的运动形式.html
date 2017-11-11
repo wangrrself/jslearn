@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box {
+	width: 100px;
+	height: 100px;
+	background:red;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	//var b = Tween.Back.easeIn;
+	//var b = Tween.Bounce.easeOut;
+	//var b = Tween.Circ.easeInOut;
+	//var b = Tween.Elastic.easeIn;
+	//var b = Tween.Expo.easeOut;
+	//var b = Tween.Quad.easeIn;
+	//var b = Tween.Quart.easeOut;
+	//var b = Tween.Quint.easeIn;
+	//var b = Tween.Sine.easeInOut;
+	var b = Tween.Back.prototype;
+	oBox.onclick = function(){
+		move(this,{left:700},{easeing:b});
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oTxt = document.getElementById('txt');
+            var last = new Date().getTime();
+            var timer;
+            timer = setInterval(function () {
+                var now = new Date().getTime();
+                oTxt.value += now - last + '\n';
+                last = new Date().getTime();
+            },-100);
+
+            document.onclick = function () {
+                clearInterval(timer);
+            };
+        }
+    </script>
+</head>
+<body>
+<textarea name="" id="txt" cols="30" rows="10"></textarea>
+</body>
+</html>

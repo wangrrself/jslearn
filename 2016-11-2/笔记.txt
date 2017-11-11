@@ -1,0 +1,71 @@
+﻿回顾:
+    1.
+        domReady:
+            function domReady(fn){
+                if(document.addEventListener){
+                    document.addEventListener('DOMContentLoaded',function(){
+                        fn && fn();
+                    },false);
+                }else{
+                    document.attachEvent('onreadystatechange',function(){
+                        if(document.readyState== 'complete'){
+                            fn && fn();
+                        }
+                    });
+                }
+            }
+
+    2.事件委托[可以给未来的元素加事件]:
+        把子元素的事件委托给父元素来做;
+        事件源:
+        var oTarget = oEvent.target || oEvent.srcElement;
+        if(oTarget.tagName == 'LI'){
+            oTarget.style.display = 'none';
+        }
+
+    3.onmouseout && onmouseover 的bug：
+        onmouseout：
+             var oTo = oEvent.toElement || oEvent.relatedTarget;
+             if(父级.contains(oTo))return;
+
+        onmouseover:
+            var oFrom = oEvent.fromElement || oEvent.relatedTarget;
+            if(父级.contains(oFrom))return;
+
+    4.window.onload:
+        div,css,html,js,images····
+------------------------------------------------------------------------
+定时器选择30的原因:
+    1.眼睛比较容易接受的一个时间;
+    2.定时器是不准确的;在保证页面性能的前提下,优先选择30;
+    3.在多标签浏览器中,如果注意力不在当前标签页面中,定时器会变得很慢;
+-------------------------------------------------------------------------
+打车：
+    从A--B花费1000ms走完;
+    时间[time]：1000ms
+    起始点[start]：a
+    目的地[iTarget]:b
+    总距离[dis]: b - a;
+    多长时间走一次: 30
+    总共走了多少次[count]:Math.floor(1000/30);
+    步长[step]:总距离/次数;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

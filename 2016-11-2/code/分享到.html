@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: fixed;
+            right: -200px;
+            top: 50%;
+            margin-top: -100px;
+        }
+
+        #bar {
+            width: 20px;
+            height: 66px;
+            text-align: center;
+            padding-top: 14px;
+            position: absolute;
+            left: -20px;
+            top: 60px;
+            background: #000;
+            color: #fff;
+        }
+    </style>
+    <script src="move1.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+            oDiv.onmouseover = function(){
+                move(this,{right:0},1000);
+            }
+
+            oDiv.onmouseout = function(){
+                move(this,{right:-200},300);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div">
+    <span id="bar">分享到</span>
+</div>
+</body>
+</html>
