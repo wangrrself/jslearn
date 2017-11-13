@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="demoForm">
+    <p>
+        <label for="user">username:</label>
+        <input type="text" name="username" id="user"/>
+    </p>
+    <p>
+        <label for="pass">password:</label>
+        <input type="password" name="password" id="pass"/>
+    </p>
+    <p>
+        <input type="submit" value="提交" id="btn"/>
+    </p>
+</form>
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+    $(function () {
+        $('#demoForm').validate({
+            rules: {
+                username: {
+                    required:true,
+                    rangelength:[3,10],
+                    remote:'remote.json'
+                },
+                password: {
+                    required:true,
+                    rangelength:[6,16]
+                }
+            },
+            messages:{
+                username:{
+                    required:'此项必填',
+                    rangelength:'用户名是3-10位字符',
+                    remote:'用户名已存在'
+                },
+                password:{
+                    required:'此项必填',
+                    rangelength:'密码是6-16位字符'
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

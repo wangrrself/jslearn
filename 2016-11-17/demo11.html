@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="demoForm">
+    <p>
+        <label for="user">username:</label>
+        <input type="text" name="username" id="user"/>
+    </p>
+    <p>
+        <label for="pass">password:</label>
+        <input type="password" name="password" id="pass"/>
+    </p>
+    <p>
+        <input type="submit" value="提交" id="btn"/>  <button id="check">检查</button>
+    </p>
+
+</form>
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+    $(function () {
+        $('#demoForm').validate({
+            debug:true,
+            rules: {
+                username: {
+                    required:true,
+                    minlength:3,
+                    maxlength:10
+                },
+                password: {
+                    required:true,
+                    minlength:6,
+                    maxlength:16
+                }
+            },
+            messages:{
+                username:{
+                    required:'此项必填',
+                    minlength:'最少3位',
+                    maxlength:'最大10位'
+                },
+                password:{
+                    required:'此项必填',
+                    minlength:'最少6位',
+                    maxlength:'最大16位'
+                }
+            }
+        });
+
+        $('#check').click(function(){
+            alert($('#demoForm').valid()?'验证通过':'请检查您的输入');
+        });
+    });
+</script>
+</body>
+</html>

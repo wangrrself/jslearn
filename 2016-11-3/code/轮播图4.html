@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #wrap {
+            width: 590px;
+            height: 340px;
+            margin: 50px auto;
+            border: #000 1px solid;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #wrap a {
+            display: block;
+            width: 50px;
+            height: 30px;
+            background: #000;
+            opacity: .5;
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 24px;
+            z-index: 990;
+        }
+
+        #prev {
+            left: 0;
+        }
+
+        #next {
+            right: 0;
+        }
+
+        #btn {
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            width: 130px;
+            margin-left: -65px;
+            z-index: 999;
+        }
+
+        #btn li {
+            width: 20px;
+            height: 20px;
+            float: left;
+            margin-left: 6px;
+            border-radius: 50%;
+            background: #c00;
+        }
+
+        #btn li.active {
+            background: #ccc;
+        }
+
+        #box {
+            height: 340px;
+            position: absolute;
+        }
+
+        #box li {
+            width: 590px;
+            height: 340px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #box img {
+            width: 590px;
+            height: 340px;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var oWrap = document.getElementById('wrap');
+            var oBox = document.getElementById('box');
+            var oBtn = document.getElementById('btn');
+            var aBtn = oBtn.children;
+            var aLi = oBox.children;
+            var oPrev = document.getElementById('prev');
+            var oNext = document.getElementById('next');
+            var iNow = 0;
+
+            for (var i = 0; i < aBtn.length; i++) {
+                aBtn[i].index = i;
+                aBtn[i].onclick = function () {
+                    iNow = this.index;
+                    tab();
+                }
+            }
+
+            function tab() {
+                for (var i = 0; i < aLi.length; i++) {
+                    aBtn[i].className = '';
+                    move(aLi[i], {opacity: 0});
+                }
+                aBtn[iNow].className = 'active';
+                move(aLi[iNow], {opacity: 1});
+            }
+            oPrev.onclick = function () {
+                iNow--;
+                if (iNow == -1)iNow = aBtn.length - 1;
+                tab();
+            };
+
+            oNext.onclick = next;
+            function next() {
+                iNow++;
+                if (iNow == aBtn.length)iNow = 0;
+                tab();
+            }
+            var timer = null;
+            timer = setInterval(next,3000);
+            oWrap.onmouseover = function(){
+                clearInterval(timer);
+            };
+            oWrap.onmouseout = function(){
+                timer = setInterval(next,3000);
+            };
+        }
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <a href="javascript:;" id="prev">←</a>
+    <a href="javascript:;" id="next">→</a>
+    <ul id="box">
+        <li><img src="img/1.jpg" alt=""/></li>
+        <li><img src="img/2.jpg" alt=""/></li>
+        <li><img src="img/3.jpg" alt=""/></li>
+        <li><img src="img/4.jpg" alt=""/></li>
+        <li><img src="img/5.jpg" alt=""/></li>
+    </ul>
+    <ol id="btn">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</div>
+</body>
+</html>

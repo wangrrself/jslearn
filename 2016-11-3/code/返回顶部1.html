@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #btn {
+            width: 80px;
+            height: 40px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            margin: -20px 0 0 -40px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+
+            window.onscroll = function(){
+                var oScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if(oScroll > 500){
+                    oBtn.style.display = 'block';
+                }else{
+                    oBtn.style.display = 'none';
+                }
+
+            }
+        }
+    </script>
+</head>
+<body style="height: 3000px">
+<input type="button" value="返回顶部" id="btn">
+</body>
+</html>

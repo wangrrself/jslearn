@@ -1,0 +1,132 @@
+﻿jQuery & JS
+    jQuery就是原生JS封装的一个大型库,或者叫做框架;
+
+    jQuery使用简单方便。
+
+    js和jQuery哪个更厉害？哪个效率更高？
+
+window.onload:   --->$();
+
+obj.hide();让元素消失;
+obj.show();让元素显示;
+obj.slideDown()从上往下滑;
+obj.slideUp();从下往上滑;
+obj.fadeOut():淡出;
+obj.fadeIn():淡入;
+obj.animate({width: '300px'},{duration:4000,easing:'linear',complete:function(){}})
+
+slideDown()&slideUp&fadeIn()&fadeOut()&animate()最好都配合stop()使用;
+
+$('#div'):获取id为div的元素
+$('.div'):获取class为div的元素
+$('li'):获取所有的li元素;
+$('div ul li'):获取div里面的ul里面的li;
+$('.red ul li input'):获取class名称为red的div里面的input元素;
+$('li:first'):获取到第一个li
+$('li:last'):获取到最后一个li
+$('li:even'):偶数行的li;
+$('li:odd'):奇数行的li
+$('div:contains(p)'):包含有'p'文本的div;
+$('div:has(p)'):包含有P标签的div元素;
+$('input[type="button"]'):type=button的input
+$('input[type="text"]')type=text的input
+$('input[type="password"]')type=password的input;
+$('li[class="red"]'):class=red的li元素;
+aDiv.eq($(this).index()).show();包含有this.index的那个div显示出来;
+
+获取元素内容：
+    非表单元素：html()
+    表单元素： val();
+
+obj.css('width'):获取宽度,纯宽度,不包含盒子模型的宽高;
+obj.css('width','200px'):设置,元素的宽度设置为200px;
+obj.css({width: '300px',height: '300px'···}):设置元素的宽高为300px;
+
+操作className：
+    obj.addClass('className');添加class名字;
+    obj.removeClass('className');删除class名字;
+
+this: $(this);
+index: index();
+
+obj.attr('title');获取元素的title值;
+obj.attr('属性名','属性值');设置元素的属性值;
+obj.attr({alt:'购物',title:'images'}):给元素设置多个属性;
+
+var oStrong = $('<strong>我是一个strong标签</strong>');:创建一个strong标签;
+oStrong.appendTo(父级):往后面插入;
+oStrong.prependTo(父级):往前面插入;
+oStrong.insertBefore(父级):往父级的前面插入一个;
+oStrong.insertAfter(父级):往父级的后面插入一个
+obj.remove():删除obj元素;
+
+obj.parent():结构上的父级;
+obj.offsetParent():定位的父级;
+
+关于事件:
+    obj.click(function(){});
+    obj.mouseover(function(){});
+    obj.mouseout(function(){});
+    obj.hover(function(){});
+    obj.keyDown(function(){});
+    obj.keyUp(function(){});
+    obj.contextmenu(function(){});
+    obj.mousemove(function(){});
+    obj.mousedown(function(){});
+    obj.mouseup(function(){});
+
+事件绑定：
+    obj.bind('事件名',fn);不能给未来的元素添加事件;
+
+事件解除绑定：不能解除匿名函数的绑定;
+    obj.unbind('事件名',fn);
+
+obj.live('事件名',fn):原理是事件委托;
+obj.die('click');接触元素的click事件绑定;
+
+
+obj.width()：物体的纯宽度;
+obj.height():物体的纯高度;
+obj.outerWidth():物体的盒子模型的宽度;
+obj.outerHeight():物体的盒子模型的高度;
+obj.offset().left: 物体到左边的绝对距离;
+obj.offset().top: 物体到上边的绝对距离;
+
+事件对象:
+    ev.clientX
+    ev.clientY
+    ev.keyCode
+
+return false:阻止默认事件,也可以阻止事件冒泡;
+
+
+obj.each(fn):循环某个元素;
+aBtn.each(function(index,element){//index:索引;element:元素;
+    element.onclick = function(){
+        alert(index);
+    }
+});
+
+$.browser.webkit:判断浏览器是都webkit内核的;
+
+
+滚屏插件：http://www.dowebok.com/77.html
+
+选项卡插件：http://www.dowebok.com/demo/2014/96/index4.html
+
+图片插件：http://www.fancybox.net/
+
+日历插件：http://www.my97.net/dp/source.asp
+    https://github.com/longbill/jquery-date-range-picker√
+
+验证插件：
+    http://validform.rjboy.cn/
+
+
+
+
+
+
+
+
+

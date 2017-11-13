@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 80px;
+            height: 80px;
+            background: red;
+            margin: 10px 0;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var aDiv = document.getElementsByTagName('div');
+
+            for(var i = 0; i < aDiv.length; i++){
+                aDiv[i].onmouseover = function(){
+                    move(this,500,3000,'width');
+                }
+
+                aDiv[i].onmouseout = function(){
+                    move(this,80,3000,'width');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

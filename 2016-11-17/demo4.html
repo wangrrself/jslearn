@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="demoForm">
+    <p>
+        <label for="user">username:</label>
+        <input type="text" name="username" id="user"/>
+    </p>
+    <p>
+        <label for="pass">password:</label>
+        <input type="password" name="password" id="pass"/>
+    </p>
+    <p>
+        <label for="pass">age:</label>
+        <input type="text" name="age" id="age"/>
+    </p>
+    <p>
+        <input type="submit" value="提交" id="btn"/>
+    </p>
+</form>
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+    $(function () {
+        $('#demoForm').validate({
+            rules: {
+                username: {
+                    required:true,
+                    rangelength:[3,10]
+                },
+                password: {
+                    required:true,
+                    rangelength:[6,16]
+                },
+                age:{
+                    required:true,
+                    digits:true,
+//                    range:[18,100]
+                    min: 18,
+                    max: 100
+                }
+            },
+            messages:{
+                username:{
+                    required:'此项必填',
+                    rangelength:'用户名是3-10位字符'
+                },
+                password:{
+                    required:'此项必填',
+                    rangelength:'密码是6-16位字符'
+                },
+                age:{
+                    required:'此项必填',
+                    digits:'年龄必须是正整数',
+//                    range:'年龄必须是18-100岁之间'
+                    min: '年龄最小18岁',
+                    max: '年龄最大100岁'
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrong {
+            color: #c00;
+        }
+        .right {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<form action="" id="demoForm">
+    <p>
+        <label for="user">username:</label>
+        <input type="text" name="username" id="user"/>
+    </p>
+    <p>
+        <label for="pass">password:</label>
+        <input type="password" name="password" id="pass"/>
+    </p>
+    <p id="info"></p>
+    <p>
+        <input type="submit" value="提交" id="btn"/>
+    </p>
+
+</form>
+<script src="jquery-1.9.1.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script>
+    $(function () {
+        $('#demoForm').validate({
+            rules: {
+                username: {
+                    required:true,
+                    code:true
+                },
+                password: {
+                    required:true,
+                    minlength:6,
+                    maxlength:16
+                }
+            },
+            messages:{
+                username:{
+                    required:'此项必填',
+                    minlength:'最少5位',
+                    maxlength:'最大10'
+                },
+                password:{
+                    required:'此项必填',
+                    minlength:'最少6位',
+                    maxlength:'最大16位'
+                }
+            },
+            errorClass:'wrong',
+            validClass:'right',
+            errorElement:'li',
+            wrapper:'ul',
+            errorLabelContainer:'#info',
+            //element：错误的元素,errorClass：错误的class,validClass:正确的class;
+            highlight:function(element,errorClass,validClass){
+                $(element).addClass(errorClass).removeClass(validClass);
+                $(element).fadeOut().fadeIn();
+            },
+            unhighlight:function(element,errorClass,validClass){
+                $(element).addClass(validClass).removeClass(errorClass);
+            }
+        });
+        //postcode:自定义的规则的名字;
+        //'用户名必须是邮编格式':错误的提示信息;
+        //function(value,element,params){}
+        //value:需要匹配的元素的value值;
+        //element:当前的元素;
+        $.validator.addMethod('code',function(value){
+            var reg = /^[0-9]{6}$/;
+            return reg.test(value);//value值是否符合reg的规则;
+        },'用户名必须是邮编格式');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+运动形式：
+    匀速[linear]：
+        var a = n/count;
+        cur = start[name] + dis[name] * a;
+    加速[ease-in]：
+        var a = n/count;
+        cur = start[name] + dis[name] * a * a * a;
+    减速[ease-out]：
+        var a = n/count;
+        cur = start[name] + dis[name] * (1 - a * a * a);
+
+move(obj, json, options)options-->time:3000,easeing:'ease-in'

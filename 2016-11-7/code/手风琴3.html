@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 590px;
+            height: 340px;
+            border: #000 1px solid;
+            position: relative;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        #box li {
+            position: absolute;
+            width: 590px;
+            height: 340px;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementById('box');
+            var aLi = oBox.children;
+
+            var w = 40;
+
+            for (var i = 1; i < aLi.length; i++) {
+                aLi[i].style.left = oBox.offsetWidth - w * (aLi.length - i) + 'px';
+            }
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].onmouseover = function () {
+                    for (var i = 0; i < aLi.length; i++) {
+                        if (i <= this.index) {
+                            move(aLi[i], {left: w * i});
+                        } else {
+                            move(aLi[i], {left: oBox.offsetWidth - w * (aLi.length - i)});
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="box">
+    <li style="background: pink"></li>
+    <li style="background: green"></li>
+    <li style="background: yellow"></li>
+    <li style="background: red"></li>
+    <li style="background: blue"></li>
+</ul>
+</body>
+</html>

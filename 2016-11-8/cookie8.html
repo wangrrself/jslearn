@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//name：cookie名字,value:cookie 值; iDay: 过期时间
+//setCookie(name,value,iDay);
+function setCookie(name,value,iDay){
+	if(iDay){
+		var oDate = new Date();
+		oDate.setDate(oDate.getDate() + iDay);
+		document.cookie = name+'='+value+';path=/;expires=' + oDate;	
+	}else{
+		document.cookie = name+'='+value+';path=/';
+	}
+}
+
+setCookie('zhangsan','100',3);
+setCookie('lisi','200');
+
+//getCookie(name);
+//a=1; abc=123
+function getCookie(name){
+	var arr = document.cookie.split('; ');
+	for(var i =0 ;i < arr.length; i++){
+		var tmp = arr[i].split('=');
+		if(name == tmp[0]){
+			return tmp[1];	
+		}
+	}
+	return '';
+}
+
+//removeCookie(name);
+function removeCookie(name){
+	setCookie(name,'as',-1);
+}
+
+removeCookie('lisi');
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

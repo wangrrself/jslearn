@@ -1,0 +1,52 @@
+﻿cookie: 
+	以域为单位;
+
+服务器:
+	电脑,配置高,内存大,
+
+F12-->application-->cookies
+
+三个步骤：
+	种一个cookie
+	取一个cookie
+	使用cookie
+
+cookie:
+	必须放在服务器环境下;
+	不安全;
+	容量小,4KB;
+
+设置cookie:
+	document.cookie = 'name=value';
+
+取到的cookie的格式,获取到的cookie都是字符串：
+	a=1; abc=123
+
+Expires:到期时间,过期时间,可以自行设置;
+	session:会话;
+	
+如果cookie名字相同,会修改[覆盖],如果名字不同,追加一条cookie;
+
+关于获取cookie:
+	父级种下的cookie,子级可以获取到;子级种下的cookie,父级获取不到;
+
+path:目录;可以设置,设置到根目录下,/
+
+一个网站一般情况下共用一套cookie,所以cookie应该种到在任何地方都可以获取的目录。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

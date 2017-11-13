@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div');
+            var count= 0;
+            var timer;
+            oDiv.onclick = function(){
+                timer = setInterval(function(){
+                    count++;
+                    if(count == 300){
+                        clearInterval(timer);
+                    }
+                    oDiv.style.left = count + 'px';
+                },30);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>
